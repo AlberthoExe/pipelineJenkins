@@ -8,11 +8,11 @@ pipeline {
             }
         }
 
-        stage('Instalar dependencias') {
+        '''stage('Instalar dependencias') {
             steps {
                 sh 'pip install -r requirements.txt || true'
             }
-        }
+        }'''
 
         stage('Ejecutar pruebas unitarias') {
             steps {

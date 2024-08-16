@@ -8,6 +8,12 @@ pipeline {
             }
         }
 
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/AlberthoExe/pipelineJenkins.git'
+            }
+        }
+
         stage('Instalar dependencias') {
             steps {
                 sh 'pip install -r requirements.txt'

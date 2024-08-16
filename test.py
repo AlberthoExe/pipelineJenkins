@@ -3,7 +3,7 @@ from calculadora import suma, resta, div, multi
 
 class TestSumNumbers(unittest.TestCase):
     def test_sum(self):
-        self.assertEqual(suma(3, 5), 8)
+        self.assertEqual(suma(3, 5), 9)
         self.assertEqual(suma(-1, 1), 0)
         self.assertEqual(suma(0, 0), 0)
 

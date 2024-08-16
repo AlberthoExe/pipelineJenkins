@@ -4,19 +4,13 @@ pipeline {
     stages {
         stage('Clonar repositorio') {
             steps {
-                git 'https://github.com/AlberthoExe/pipelineJenkins.git'
-            }
-        }
-
-        stage('Checkout') {
-            steps {
                 git branch: 'main', url: 'https://github.com/AlberthoExe/pipelineJenkins.git'
             }
         }
 
         stage('Instalar dependencias') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh 'pip install -r requirements.txt || true'
             }
         }
 

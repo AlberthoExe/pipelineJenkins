@@ -8,15 +8,21 @@ pipeline {
             }
         }
 
-        '''stage('Instalar dependencias') {
+        
+
+        stage('Configurar entorno virtual e instalar dependencias') {
             steps {
-                sh 'pip install -r requirements.txt || true'
+                sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install -r requirements.txt
+                '''
             }
-        }'''
+        }
 
         stage('Ejecutar pruebas unitarias') {
             steps {
-                sh 'python -m unittest discover'
+                sh 'python3 -m unittest discover'
             }
         }
     }
